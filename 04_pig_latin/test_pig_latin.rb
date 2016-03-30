@@ -37,12 +37,12 @@ class TestPigLatin < MiniTest::Test
     assert_equal "oolschay", s
   end
 
-  def test_translates_qu_as_phoneme
+  def test_translates_qu_as_phoneme # see following test
     s = translate("quiet")
     assert_equal "ietquay", s
   end
 
-  def test_translates_qu_as_consonant_when_preceded_by_consonant
+  def test_translates_qu_as_consonant_when_preceded_by_consonant #wtf??? why do we carry over the u as well??
     s = translate("square")
     assert_equal "aresquay", s
   end
@@ -56,4 +56,9 @@ class TestPigLatin < MiniTest::Test
   # Write tests and get them to pass for:
   # * capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * the punctuation of the original phrase is retained
+
+  def test_translates_capitalized
+    s = translate("My friend Jim is from Denver")
+    assert_equal "Ymay iendfray Imjay isay omfray Enverday", s
+  end
 end
