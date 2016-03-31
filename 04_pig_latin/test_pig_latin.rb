@@ -57,8 +57,13 @@ class TestPigLatin < MiniTest::Test
   # * capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * the punctuation of the original phrase is retained
 
-  def test_translates_capitalized
+  def test_translates_capitalization_remains
     s = translate("My friend Jim is from Denver")
     assert_equal "Ymay iendfray Imjay isay omfray Enverday", s
   end
+  #didn't finish this last one
+  # def test_translates_punctuation_remains
+  #   s = translate("Title: Sometimes, there is a pause... and then an end!")
+  #   assert_equal "Itletay: Ometimessay, erethay isay aay ausepay... anday enthay anay enday!", s
+  # end
 end
